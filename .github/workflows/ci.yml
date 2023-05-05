@@ -43,3 +43,6 @@ jobs:
 
       - name: Run tests
         run: cargo test --verbose
+
+      - name: Run tests with no default features
+        run: cargo test --verbose --no-default-features
