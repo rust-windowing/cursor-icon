@@ -88,7 +88,7 @@ extern crate serde;
 /// Describes the appearance of the (usually mouse) cursor icon.
 ///
 /// The names are taken from the CSS W3C specification:
-/// <https://w3c.github.io/csswg-drafts/css-ui/#cursor>
+/// <https://www.w3.org/TR/css-ui-3/#cursor>
 #[derive(Debug, Default, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum CursorIcon {
