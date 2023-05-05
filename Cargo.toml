@@ -1,0 +1,15 @@
+[package]
+name = "cursor-icon"
+version = "0.1.0"
+authors = ["Kirill Chibisov <contact@kchibisov.com>"]
+description = "Cross platform cursor icon type"
+repository = "https://github.com/rust-windowing/cursor-icon"
+keywords = ["windowing", "cursor"]
+license = "MIT"
+readme = "README.md"
+edition = "2021"
+categories = ["gui"]
+rust-version = "1.64.0"
+
+[dependencies]
+serde = { version = "1.0.162", default-features = false, features = ["derive"], optional = true }
