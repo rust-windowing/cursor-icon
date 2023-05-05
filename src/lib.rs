@@ -109,8 +109,8 @@ pub enum CursorIcon {
     Pointer,
 
     /// A progress indicator. The program is performing some processing, but is
-    /// different from [`CursorIcon::Wait`] in that the user may still interact with the
-    /// program.
+    /// different from [`CursorIcon::Wait`] in that the user may still interact
+    /// with the program.
     Progress,
 
     /// Indicates that the program is busy and the user should wait. Often
