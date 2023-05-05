@@ -89,6 +89,7 @@ extern crate serde;
 ///
 /// The names are taken from the CSS W3C specification:
 /// <https://www.w3.org/TR/css-ui-3/#cursor>
+#[non_exhaustive]
 #[derive(Debug, Default, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum CursorIcon {
