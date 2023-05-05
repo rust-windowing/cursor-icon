@@ -1,4 +1,4 @@
-#![no_std]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![deny(rust_2018_idioms)]
 #![deny(rustdoc::broken_intra_doc_links)]
 #![deny(unsafe_op_in_unsafe_fn)]
@@ -319,3 +319,6 @@ impl core::fmt::Display for CursorIconParseError {
         f.write_str("failed to parse cursor icon")
     }
 }
+
+#[cfg(feature = "std")]
+impl std::error::Error for CursorIconParseError {}
