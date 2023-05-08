@@ -328,7 +328,7 @@ impl core::fmt::Display for CursorIcon {
 }
 
 impl core::str::FromStr for CursorIcon {
-    type Err = CursorIconParseError;
+    type Err = ParseError;
 
     fn from_str(name: &str) -> Result<Self, Self::Err> {
         match name {
@@ -366,7 +366,7 @@ impl core::str::FromStr for CursorIcon {
             "all-scroll" => Ok(CursorIcon::AllScroll),
             "zoom-in" => Ok(CursorIcon::ZoomIn),
             "zoom-out" => Ok(CursorIcon::ZoomOut),
-            _ => Err(CursorIconParseError { _private: () }),
+            _ => Err(ParseError { _private: () }),
         }
     }
 }
@@ -377,15 +377,15 @@ impl core::str::FromStr for CursorIcon {
 ///
 /// [`FromStr`]: core::str::FromStr
 #[derive(Debug, PartialEq, Eq)]
-pub struct CursorIconParseError {
+pub struct ParseError {
     _private: (),
 }
 
-impl core::fmt::Display for CursorIconParseError {
+impl core::fmt::Display for ParseError {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.write_str("failed to parse cursor icon")
     }
 }
 
 #[cfg(feature = "std")]
-impl std::error::Error for CursorIconParseError {}
+impl std::error::Error for ParseError {}
