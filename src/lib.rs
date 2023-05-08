@@ -89,8 +89,6 @@ extern crate serde;
 #[cfg(feature = "alloc")]
 extern crate alloc as _;
 
-use core::fmt;
-
 /// Describes the appearance of the (usually mouse) cursor icon.
 ///
 /// The names are taken from the CSS W3C specification:
@@ -272,8 +270,8 @@ impl CursorIcon {
     }
 }
 
-impl fmt::Display for CursorIcon {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+impl core::fmt::Display for CursorIcon {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.write_str(self.name())
     }
 }
