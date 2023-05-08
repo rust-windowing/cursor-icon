@@ -98,7 +98,6 @@ use core::fmt;
 #[non_exhaustive]
 #[derive(Debug, Default, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary))]
 pub enum CursorIcon {
     /// The platform-dependent default cursor. Often rendered as arrow.
     #[default]
