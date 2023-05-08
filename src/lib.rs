@@ -89,6 +89,8 @@ extern crate serde;
 #[cfg(feature = "alloc")]
 extern crate alloc as _;
 
+use core::fmt;
+
 /// Describes the appearance of the (usually mouse) cursor icon.
 ///
 /// The names are taken from the CSS W3C specification:
@@ -96,6 +98,8 @@ extern crate alloc as _;
 #[non_exhaustive]
 #[derive(Debug, Default, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
+#[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary))]
 pub enum CursorIcon {
     /// The platform-dependent default cursor. Often rendered as arrow.
     #[default]
@@ -267,6 +271,12 @@ impl CursorIcon {
             CursorIcon::ZoomIn => "zoom-in",
             CursorIcon::ZoomOut => "zoom-out",
         }
+    }
+}
+
+impl fmt::Display for CursorIcon {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(self.name())
     }
 }
 
