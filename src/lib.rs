@@ -310,14 +310,16 @@ impl core::str::FromStr for CursorIcon {
             "all-scroll" => Ok(CursorIcon::AllScroll),
             "zoom-in" => Ok(CursorIcon::ZoomIn),
             "zoom-out" => Ok(CursorIcon::ZoomOut),
-            _ => Err(CursorIconParseError),
+            _ => Err(CursorIconParseError { _private: () }),
         }
     }
 }
 
 /// An error which could be returned when parsing [`CursorIcon`].
 #[derive(Debug, PartialEq, Eq)]
-pub struct CursorIconParseError;
+pub struct CursorIconParseError {
+    _private: (),
+}
 
 impl core::fmt::Display for CursorIconParseError {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
