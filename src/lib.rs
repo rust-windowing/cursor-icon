@@ -368,6 +368,8 @@ impl core::str::FromStr for CursorIcon {
 /// An error which could be returned when parsing [`CursorIcon`].
 ///
 /// This occurs when the [`FromStr`] implementation of [`CursorIcon`] fails.
+/// 
+/// [`FromStr`]: core::str::FromStr
 #[derive(Debug, PartialEq, Eq)]
 pub struct CursorIconParseError;
 
