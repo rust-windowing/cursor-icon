@@ -321,6 +321,12 @@ impl CursorIcon {
     }
 }
 
+impl core::fmt::Display for CursorIcon {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        f.write_str(self.name())
+    }
+}
+
 impl core::str::FromStr for CursorIcon {
     type Err = CursorIconParseError;
 
