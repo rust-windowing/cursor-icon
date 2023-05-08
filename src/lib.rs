@@ -85,6 +85,10 @@
 #[macro_use]
 extern crate serde;
 
+// XXX for forwards compatibility.
+#[cfg(feature = "alloc")]
+extern crate alloc as _;
+
 /// Describes the appearance of the (usually mouse) cursor icon.
 ///
 /// The names are taken from the CSS W3C specification:
