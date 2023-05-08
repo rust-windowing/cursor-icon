@@ -13,7 +13,7 @@
 //! The cross platform cursor icon type.
 //!
 //! This type is intended to be used as a standard interopability type between
-//! graphics frameworks in order to convey the cursor icon type.
+//! GUI frameworks in order to convey the cursor icon type.
 //!
 //! # Example
 //!
