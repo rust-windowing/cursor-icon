@@ -11,6 +11,23 @@
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
 //! The cross platform cursor icon type.
+//!
+//! This type is intended to be used as a standard interopability type between
+//! GUI frameworks in order to convey the cursor icon type.
+//!
+//! # Example
+//!
+//! ```
+//! use cursor_icon::CursorIcon;
+//!
+//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+//! // Parse a cursor icon from the string that describes it.
+//! let cursor_name = "pointer";
+//! let cursor_icon: CursorIcon = cursor_name.parse()?;
+//! println!("The cursor icon is {:?}", cursor_icon);
+//! # Ok(())
+//! # }
+//! ```
 
 // This file contains a portion of the CSS Basic User Interface Module Level 3
 // specification. In particular, the names for the cursor from the #cursor
@@ -94,6 +111,15 @@ extern crate alloc as _;
 ///
 /// The names are taken from the CSS W3C specification:
 /// <https://www.w3.org/TR/css-ui-3/#cursor>
+///
+/// # Examples
+///
+/// ```
+/// use cursor_icon::CursorIcon;
+///
+/// // Get the cursor icon for the default cursor.
+/// let cursor_icon = CursorIcon::Default;
+/// ```
 #[non_exhaustive]
 #[derive(Debug, Default, Copy, Clone, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -231,6 +257,30 @@ impl CursorIcon {
     ///
     /// This name most of the time could be passed as is to cursor loading
     /// libraries on X11/Wayland and could be used as-is on web.
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// use cursor_icon::CursorIcon;
+    /// use wayland_cursor::CursorTheme;
+    ///
+    /// # use wayland_client::Connection;
+    /// # use wayland_client::protocol::wl_shm::WlShm;
+    /// # fn test(conn: &Connection, shm: WlShm) -> Result<(), Box<dyn std::error::Error>> {
+    /// // Choose a cursor to load.
+    /// let cursor = CursorIcon::Help;
+    ///
+    /// // Load the Wayland cursor theme.
+    /// let mut cursor_theme = CursorTheme::load(conn, shm, 32)?;
+    ///
+    /// // Load the cursor.
+    /// let cursor = cursor_theme.get_cursor(cursor.name());
+    /// if let Some(cursor) = cursor {
+    ///     println!("Total number of images: {}", cursor.image_count());
+    /// }
+    /// # Ok(())
+    /// # }
+    /// ```
     pub fn name(&self) -> &'static str {
         match self {
             CursorIcon::Default => "default",
@@ -316,6 +366,10 @@ impl core::str::FromStr for CursorIcon {
 }
 
 /// An error which could be returned when parsing [`CursorIcon`].
+///
+/// This occurs when the [`FromStr`] implementation of [`CursorIcon`] fails.
+///
+/// [`FromStr`]: core::str::FromStr
 #[derive(Debug, PartialEq, Eq)]
 pub struct CursorIconParseError {
     _private: (),
