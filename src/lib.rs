@@ -330,6 +330,11 @@ impl core::fmt::Display for CursorIcon {
 impl core::str::FromStr for CursorIcon {
     type Err = ParseError;
 
+    /// Parse a string slice into [`CursorIcon`].
+    ///
+    /// The `name` is a lower kebab case [`CursorIcon`] varaint name, e.g.
+    /// `nesw-resize`. The set of possible valid `name` values matches exactly
+    /// the set of [`CursorIcon::name`] outputs.
     fn from_str(name: &str) -> Result<Self, Self::Err> {
         match name {
             "default" => Ok(CursorIcon::Default),
