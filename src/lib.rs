@@ -329,23 +329,42 @@ impl CursorIcon {
     /// adhere to the w3c standard.
     pub fn alt_names(&self) -> &[&'static str] {
         match self {
-            CursorIcon::Default => &["left_ptr", "arrow"],
+            CursorIcon::Default => &["left_ptr", "arrow", "top_left_arrow", "left_arrow"],
             CursorIcon::ContextMenu => &[],
-            CursorIcon::Help => &["question_arrow"],
-            CursorIcon::Pointer => &["hand2", "hand1"],
-            CursorIcon::Progress => &[],
+            CursorIcon::Help => &[
+                "question_arrow",
+                "whats_this",
+                "5c6cd98b3f3ebcb1f9c7f1c204630408",
+                "d9ce0ab605698f320427677b458ad60b",
+            ],
+            CursorIcon::Pointer => {
+                &["hand2", "hand1", "hand", "pointing_hand", "e29285e634086352946a0e7090d73106"]
+            },
+            CursorIcon::Progress => &[
+                "left_ptr_watch",
+                "half-busy",
+                "00000000000000020006000e7e9ffc3f",
+                "08e8e1c95fe2fc01f976f1e063a24ccd",
+            ],
             CursorIcon::Wait => &["watch"],
             CursorIcon::Cell => &["plus"],
-            CursorIcon::Crosshair => &[],
-            CursorIcon::Text => &["xterm"],
+            CursorIcon::Crosshair => &["cross"],
+            CursorIcon::Text => &["xterm", "ibeam"],
             CursorIcon::VerticalText => &[],
             CursorIcon::Alias => &["link"],
             CursorIcon::Copy => &[],
             CursorIcon::Move => &[],
             CursorIcon::NoDrop => &["circle"],
-            CursorIcon::NotAllowed => &["crossed_circle"],
-            CursorIcon::Grab => &["openhand"],
-            CursorIcon::Grabbing => &["closedhand"],
+            CursorIcon::NotAllowed => {
+                &["crossed_circle", "forbidden", "03b6e0fcb3499374a867c041f52298f0"]
+            },
+            CursorIcon::Grab => &[
+                "openhand",
+                "fleur",
+                "5aca4d189052212118709018842178c0",
+                "9d800788f1b08800ae810202380a0822",
+            ],
+            CursorIcon::Grabbing => &["closedhand", "208530c400c041818281048008011002"],
             CursorIcon::EResize => &["right_side"],
             CursorIcon::NResize => &["top_side"],
             CursorIcon::NeResize => &["top_right_corner"],
@@ -354,12 +373,38 @@ impl CursorIcon {
             CursorIcon::SeResize => &["bottom_right_corner"],
             CursorIcon::SwResize => &["bottom_left_corner"],
             CursorIcon::WResize => &["left_side"],
-            CursorIcon::EwResize => &["h_double_arrow"],
-            CursorIcon::NsResize => &["v_double_arrow"],
-            CursorIcon::NeswResize => &["fd_double_arrow", "size_bdiag"],
-            CursorIcon::NwseResize => &["bd_double_arrow", "size_fdiag"],
-            CursorIcon::ColResize => &["split_h", "h_double_arrow"],
-            CursorIcon::RowResize => &["split_v", "v_double_arrow"],
+            CursorIcon::EwResize => {
+                &["h_double_arrow", "size_hor", "028006030e0e7ebffc7f7070c0600140"]
+            },
+            CursorIcon::NsResize => {
+                &["v_double_arrow", "size_ver", "00008160000006810000408080010102"]
+            },
+            CursorIcon::NeswResize => &[
+                "fd_double_arrow",
+                "size_bdiag",
+                "50585d75b494802d0151028115016902",
+                "fcf1c3c7cd4491d801f1e1c78f100000",
+            ],
+            CursorIcon::NwseResize => &[
+                "bd_double_arrow",
+                "size_fdiag",
+                "38c5dff7c7b8962045400281044508d2",
+                "c7088f0f3e6c8088236ef8e1e3e70000",
+            ],
+            CursorIcon::ColResize => &[
+                "split_h",
+                "h_double_arrow",
+                "sb_h_double_arrow",
+                "043a9f68147c53184671403ffa811cc5",
+                "14fef782d02440884392942c11205230",
+            ],
+            CursorIcon::RowResize => &[
+                "split_v",
+                "v_double_arrow",
+                "sb_v_double_arrow",
+                "2870a09082c103050810ffdffffe0204",
+                "c07385c7190e701020ff7ffffd08103c",
+            ],
             CursorIcon::AllScroll => &[],
             CursorIcon::ZoomIn => &[],
             CursorIcon::ZoomOut => &[],
