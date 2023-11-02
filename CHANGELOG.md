@@ -7,8 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+## 1.1.0
+
 - Bump MSRV from `1.64` to `1.65`.
-
-### Added
-
-- Access to alternative names for cursor icons through the `CursorIcon::alt_names` method.
+- Add access to alternative names for cursor icons through the `CursorIcon::alt_names` method.
