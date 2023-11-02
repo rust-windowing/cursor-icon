@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0 OR Zlib"
 readme = "README.md"
 edition = "2021"
 categories = ["gui"]
-rust-version = "1.64.0"
+rust-version = "1.65.0"
 
 [dependencies]
 serde = { version = "1.0.162", default-features = false, features = ["derive"], optional = true }
