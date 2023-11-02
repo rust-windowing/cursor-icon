@@ -360,7 +360,7 @@ impl CursorIcon {
             CursorIcon::NwseResize => &["bd_double_arrow", "size_fdiag"],
             CursorIcon::ColResize => &["split_h", "h_double_arrow", "sb_h_double_arrow"],
             CursorIcon::RowResize => &["split_v", "v_double_arrow", "sb_v_double_arrow"],
-            CursorIcon::AllScroll => &[],
+            CursorIcon::AllScroll => &["size_all"],
             CursorIcon::ZoomIn => &[],
             CursorIcon::ZoomOut => &[],
         }
