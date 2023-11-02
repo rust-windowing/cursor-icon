@@ -321,6 +321,50 @@ impl CursorIcon {
             CursorIcon::ZoomOut => "zoom-out",
         }
     }
+
+    /// A list of alternative names for the cursor icon as commonly found in
+    /// legacy Xcursor themes.
+    ///
+    /// This should only be used as a fallback in case the cursor theme does not
+    /// adhere to the w3c standard.
+    pub fn alt_names(&self) -> &[&'static str] {
+        match self {
+            CursorIcon::Default => &["left_ptr", "arrow", "top_left_arrow", "left_arrow"],
+            CursorIcon::ContextMenu => &[],
+            CursorIcon::Help => &["question_arrow", "whats_this"],
+            CursorIcon::Pointer => &["hand2", "hand1", "hand", "pointing_hand"],
+            CursorIcon::Progress => &["left_ptr_watch", "half-busy"],
+            CursorIcon::Wait => &["watch"],
+            CursorIcon::Cell => &["plus"],
+            CursorIcon::Crosshair => &["cross"],
+            CursorIcon::Text => &["xterm", "ibeam"],
+            CursorIcon::VerticalText => &[],
+            CursorIcon::Alias => &["link"],
+            CursorIcon::Copy => &[],
+            CursorIcon::Move => &[],
+            CursorIcon::NoDrop => &["circle"],
+            CursorIcon::NotAllowed => &["crossed_circle", "forbidden"],
+            CursorIcon::Grab => &["openhand", "fleur"],
+            CursorIcon::Grabbing => &["closedhand"],
+            CursorIcon::EResize => &["right_side"],
+            CursorIcon::NResize => &["top_side"],
+            CursorIcon::NeResize => &["top_right_corner"],
+            CursorIcon::NwResize => &["top_left_corner"],
+            CursorIcon::SResize => &["bottom_side"],
+            CursorIcon::SeResize => &["bottom_right_corner"],
+            CursorIcon::SwResize => &["bottom_left_corner"],
+            CursorIcon::WResize => &["left_side"],
+            CursorIcon::EwResize => &["h_double_arrow", "size_hor"],
+            CursorIcon::NsResize => &["v_double_arrow", "size_ver"],
+            CursorIcon::NeswResize => &["fd_double_arrow", "size_bdiag"],
+            CursorIcon::NwseResize => &["bd_double_arrow", "size_fdiag"],
+            CursorIcon::ColResize => &["split_h", "h_double_arrow", "sb_h_double_arrow"],
+            CursorIcon::RowResize => &["split_v", "v_double_arrow", "sb_v_double_arrow"],
+            CursorIcon::AllScroll => &["size_all"],
+            CursorIcon::ZoomIn => &[],
+            CursorIcon::ZoomOut => &[],
+        }
+    }
 }
 
 impl core::fmt::Display for CursorIcon {
