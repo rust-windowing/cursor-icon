@@ -1,6 +1,6 @@
 [package]
 name = "cursor-icon"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["Kirill Chibisov <contact@kchibisov.com>"]
 description = "Cross platform cursor icon type"
 repository = "https://github.com/rust-windowing/cursor-icon"
