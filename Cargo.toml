@@ -20,5 +20,5 @@ std = ["alloc"]
 alloc = []
 
 [dev-dependencies]
-wayland-client = "0.30.1"
-wayland-cursor = "0.30.0"
+wayland-client = "0.31.1"
+wayland-cursor = "0.31.0"
