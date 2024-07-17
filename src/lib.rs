@@ -427,7 +427,7 @@ impl core::str::FromStr for CursorIcon {
 /// This occurs when the [`FromStr`] implementation of [`CursorIcon`] fails.
 ///
 /// [`FromStr`]: core::str::FromStr
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Hash)]
 pub struct ParseError {
     _private: (),
 }
