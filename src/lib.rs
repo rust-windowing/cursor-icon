@@ -14,7 +14,7 @@
 
 //! The cross platform cursor icon type.
 //!
-//! This type is intended to be used as a standard interopability type between
+//! This type is intended to be used as a standard interoperability type between
 //! GUI frameworks in order to convey the cursor icon type.
 //!
 //! # Example
@@ -42,7 +42,7 @@
 // license as well as the W3C short notice apply to the `CursorIcon` enum's
 // variants and documentation attached to them.
 
-// --------- BEGGINING OF W3C LICENSE
+// --------- BEGINNING OF W3C LICENSE
 // --------------------------------------------------------------
 //
 // License
@@ -84,7 +84,7 @@
 // --------- END OF W3C LICENSE
 // --------------------------------------------------------------------
 
-// --------- BEGGINING OF W3C SHORT NOTICE
+// --------- BEGINNING OF W3C SHORT NOTICE
 // ---------------------------------------------------------
 //
 // winit: https://github.com/rust-windowing/cursor-icon
@@ -378,7 +378,7 @@ impl core::str::FromStr for CursorIcon {
 
     /// Parse a string slice into [`CursorIcon`].
     ///
-    /// The `name` is a lower kebab case [`CursorIcon`] varaint name, e.g.
+    /// The `name` is a lower kebab case [`CursorIcon`] variant name, e.g.
     /// `nesw-resize`. The set of possible valid `name` values matches exactly
     /// the set of [`CursorIcon::name`] outputs.
     fn from_str(name: &str) -> Result<Self, Self::Err> {
