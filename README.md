@@ -1,6 +1,6 @@
 # `cursor-icon`: A common cursor icon type
 
-This library provides standard type to work with the cursor icon accross
+This library provides a standard type to work with the cursor icon across
 multiple platforms.
 
 The transformation to the actual value used by the platform for this icon is
