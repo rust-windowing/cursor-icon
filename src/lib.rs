@@ -252,6 +252,12 @@ pub enum CursorIcon {
     /// Indicates that something can be zoomed in. Often rendered as a
     /// magnifying glass with a "-" in the center of the glass.
     ZoomOut,
+
+    /// Indicates that the user will select the action that will be carried out.
+    DndAsk,
+
+    /// Indicates that something can be moved or resized in any direction.
+    AllResize,
 }
 
 impl CursorIcon {
@@ -319,6 +325,8 @@ impl CursorIcon {
             CursorIcon::AllScroll => "all-scroll",
             CursorIcon::ZoomIn => "zoom-in",
             CursorIcon::ZoomOut => "zoom-out",
+            CursorIcon::DndAsk => "dnd-ask",
+            CursorIcon::AllResize => "all-resize",
         }
     }
 
@@ -363,6 +371,8 @@ impl CursorIcon {
             CursorIcon::AllScroll => &["size_all"],
             CursorIcon::ZoomIn => &[],
             CursorIcon::ZoomOut => &[],
+            CursorIcon::DndAsk => &["copy"],
+            CursorIcon::AllResize => &["move"],
         }
     }
 }
