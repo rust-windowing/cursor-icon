@@ -254,14 +254,22 @@ pub enum CursorIcon {
     ZoomOut,
 
     /// Indicates that the user will select the action that will be carried out.
+    ///
+    /// This is a non-standard extension of the w3c standard used in freedesktop
+    /// cursor icon themes.
     DndAsk,
 
     /// Indicates that something can be moved or resized in any direction.
+    ///
+    /// This is a non-standard extension of the w3c standard used in freedesktop
+    /// cursor icon themes.
     AllResize,
 }
 
 impl CursorIcon {
-    /// The name of the cursor icon as defined in w3c standard.
+    /// The name of the cursor icon as defined in the w3c standard.
+    /// Non-standard cursors such as "DndAsk" and "AllResize" are translated as
+    /// "dnd-ask" and "all-resize" respectively.
     ///
     /// This name most of the time could be passed as is to cursor loading
     /// libraries on X11/Wayland and could be used as-is on web.
