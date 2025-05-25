@@ -7,8 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+## 1.2.0
+
 - Implement `Hash` for `ParseError`.
-- Add `CursorIcon::DndAsk` and `CursorIcon::AllResize` from the wayland-protocols version 1.42 
+- Add `CursorIcon::DndAsk` and `CursorIcon::AllResize` from the wayland-protocols version 1.42.
 
 ## 1.1.0
 
